@@ -4,5 +4,5 @@ en:
   aprmsg: "Please enter your APR as a decimal."
   durationmsg: "Please enter the total number of years of your loan"
   loopmsg: "Do you want to compute another payment? Type 'y' if yes, 'n' if no."
-  invalid_i: "Sorry, that is not a whole number. Let's try again"
-  invalid_f:  "Sorry, that is not a decimal number. Let's try again"
+  invalid_i: "Sorry, that is not a whole number. Make sure you only input numbers. Let's try again"
+  invalid_f:  "Sorry, that is not a decimal number. Make sure the format is #.##. Let's try again"
