@@ -19,7 +19,7 @@ end
 
 # this function takes inputs for the right message and opeation type to
 # prompt the user for a number and return a valid number if it is valid
-def input_number(message, lang, num = 'i')
+def valid_number(message, lang, num = 'i')
   loop do
     puts prompt(message(message, lang))
     in_num = gets.chomp
@@ -40,13 +40,13 @@ loop do
   puts message('welcome', LANGUAGE)
 
   # asks user for total loan amount and verifies input
-  loan_amount = input_number('loanmsg', LANGUAGE)
+  loan_amount = valid_number('loanmsg', LANGUAGE)
 
   # asks user for APR as a decimal and verifies input
-  yearly_apr = input_number('aprmsg', LANGUAGE, 'f')
+  yearly_apr = valid_number('aprmsg', LANGUAGE, 'f')
 
   # asks user for duration in years and verifies input
-  duration_years = input_number('durationmsg', LANGUAGE)
+  duration_years = valid_number('durationmsg', LANGUAGE)
 
   # converts strings to numbers and in the correct format for equation
   duration_months = duration_years * 12
