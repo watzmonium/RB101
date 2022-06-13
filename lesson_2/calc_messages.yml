@@ -1,0 +1,12 @@
+en:  
+  num_pick: "Please select a valid operation:"
+  asmd: "add, subtract, multiply, divide"
+  asm: "add, subtract, multiply"
+  another: "Do you want to do another calculation? (y to do another)"
+  invalid: "Invalid entry"
+jp:
+  num_pick: "TADASHII OOPA WO ERANDE KUDASAI"
+  asmd: "gattai, toru, bunkai, kiru"
+  asm: "gattai, toru, bunkai"
+  another: "matta yaru no kai? (matta yattara, 'y' wo tojite)"
+  invalid: "bzzz machigatteimasu"

@@ -1,0 +1,8 @@
+en:
+  welcome: "Welcome to the mortgage calculator! You will need your loan amount, APR, and duration in years"
+  loanmsg: "Please enter your total loan amount in dollars"
+  aprmsg: "Please enter your APR as a decimal."
+  durationmsg: "Please enter the total number of years of your loan"
+  loopmsg: "Do you want to compute another payment? Type 'y' if yes, 'n' if no."
+  invalid_i: "Sorry, that is not a whole number. Let's try again"
+  invalid_f:  "Sorry, that is not a decimal number. Let's try again"

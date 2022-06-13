@@ -23,8 +23,14 @@ display result
 
 # Examples  - 1, 1 - any operation, 0 can be accepted but the user should not be
 #             given the option to divide if 0 is given as the second number
-
+require 'yaml'
+MESSAGES = YAML.load_file('calc_messages.yml')
 math_nums = []
+LANG = 'jp'
+
+def messages(message, langu='en')
+  MESSAGES[langu][message]
+end
 
 def prompt(message)
   puts("=> #{message}")
@@ -39,7 +45,7 @@ def valid_num(which_num)
 
     return num.to_i if num.to_i.to_s == num
 
-    puts "that doesn't look like a valid number"
+    puts messages('invalid', LANG)
   end
 end
 
@@ -73,18 +79,18 @@ loop do
   loop do
     choice = nil
     loop do
-      puts 'please select an operation:'
+      puts messages('num_pick', LANG)
       if math_nums[1].zero?
-        puts prompt('add, subtract, multiply')
+        puts prompt(messages('asm', LANG))
       else
-        puts prompt('add, subtract, multiply, divide')
+        puts prompt(messages('asmd', LANG))
       end
 
       choice = gets.chomp.downcase
       if %w(add subtract multiply divide).include?(choice)
         break
       else
-        puts 'invalid entry'
+        puts messages('invalid', LANG)
       end
     end
 
@@ -107,7 +113,7 @@ loop do
 
   end
 
-  prompt('Do you want to do another calculation? (y to do another)')
+  prompt(messages('another', LANG))
   restart = gets.chomp
   break unless restart.downcase.start_with?('y')
 end
