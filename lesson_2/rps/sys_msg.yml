@@ -1,0 +1,23 @@
+welcome: 'Welcome to (R)ock, (P)aper, s(C)issors, (L)izard, (S)pock! First to 3 wins!'
+welcome_b: 'Welcome (back) to (R)ock, (P)aper, s(C)issors, (L)izard, (S)pock!'
+standings: 'The current standings are:'
+instructions0: "Would you like instructions on how to play? type 'y' if yes"
+instructions1: "This game is like rock paper scissors, except with lizards and spock"
+instructions2: "Please reference the diagram below using the 'arrow lines' to determine what beats what."
+continue: "press any key to continue."
+choose: "Choose 'R' for Rock, 'P' for Paper, 'C' for sCissors, 'L' for Lizard, or 'S' for Spock!"
+valid: "That is not a valid choice."
+again: "Do you want to play again? 'y' if yes, any other key to exit."
+pentagram: [
+  "         ,-  R <,",
+  "      ,-'   ^\\  '-,",
+  "  <,-'     /  \\    '-,_",
+  "L  _______/____\\________> P",
+  " ^.      /      \\     ,-'^",
+  "|    -, /        \\ ,-'   |",
+  "|      /-.      ,-\\      |",
+  "|     /   '-,.-'   \\     |",
+  "|    /    ,-''-.    \\    |",
+  "|   /  ,-'      '-.  \\   |",
+  "V / <'            '-. V  |",
+  "S -------------------> C"]
