@@ -24,25 +24,15 @@ def input_number(message, lang, num = 'i')
     puts prompt(message(message, lang))
     in_num = gets.chomp
     if num == 'i'
-      return in_num.to_i if integer?(in_num)
+      return in_num.to_i if /^-?\d+$/.match(in_num)
 
       puts message('invalid_i')
     else
-      return in_num.to_f if float?(in_num)
+      return in_num.to_f if /^-?\d+[.]\d+$/.match(in_num)
 
       puts message('invalid_f')
     end
   end
-end
-
-# uses regex to determine if string is a valid int
-def integer?(instring)
-  /^-?\d+$/.match(instring)
-end
-
-# uses regex to determine if string is a valid float
-def float?(instring)
-  /^-?\d+[.]\d+$/.match(instring)
 end
 
 # main program
