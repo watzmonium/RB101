@@ -1,0 +1,5 @@
+R: {word: 'ROCK', beats: ['C', 'L']}
+P: {word: 'PAPER', beats: ['R', 'S']}
+C: {word: 'SCISSORS', beats: ['P', 'L']}
+L: {word: 'LIZARD', beats: ['P', 'S']}
+S: {word: 'SPOCK', beats: ['R', 'C']}
