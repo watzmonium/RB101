@@ -21,7 +21,7 @@ end
 
 p munsters
 
-munsters.each do |name, details|
+munsters.each do |_, details|
   case details["age"]
   when 0...18
     details["age_group"] = "kid"
