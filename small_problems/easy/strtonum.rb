@@ -34,10 +34,10 @@ def hexadecimal_to_int(in_str)
   tenpow = 1
   len = in_str.length - 1
   (len + 1).times do |x|
-    sum += HEXTABLE[in_str[len - (x + 1)].upcase] * tenpow
+    sum += HEXTABLE[in_str[len - x].upcase] * tenpow
     tenpow *= 16
   end
   sum.floor
 end
 
-p hexadecimal_to_int('4D9f')
+p hexadecimal_to_int('9f32')
