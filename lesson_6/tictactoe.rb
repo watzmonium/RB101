@@ -68,22 +68,32 @@ def player_places_piece!(brd)
 end
 
 def computer_places_piece!(brd)
-  if !!detect_losing(brd)
-    square = detect_losing(brd)
+  square = winning_move(brd, PLAYER_MARKER)
+  square = winning_move(brd, COMPUTER_MARKER) if square == 0
+  unless square == 0
     brd[square[0]] = COMPUTER_MARKER
     return
   end
 
   square_ar = empty_squares(brd)
-  square = 0
   odds = square_ar.select(&:odd?)
-  if odds.empty?
-    square = square_ar.sample
-  else
-    square = odds.sample
-    square = 5 if odds.include?(5)
+  square = square_ar.sample if odds.empty?
+  if square == 0
+    square = odds.include?(5) ? 5 : odds.sample
   end
+
   brd[square] = COMPUTER_MARKER
+end
+
+def winning_move(brd, marker)
+  WINNING_LINES.each do |set|
+    # brd.values_at(*line).count(PLAYER_MARKER) == 2
+    if set.select { |space| brd[space] == marker }.size == 2
+      piece = set.select { |space| brd[space] == INITIAL_MARKER }
+      return piece unless piece.empty?
+    end
+  end
+  0
 end
 
 def board_full?(brd)
@@ -92,22 +102,6 @@ end
 
 def someone_won?(brd)
   !!detect_winner(brd)
-end
-
-def detect_losing(brd)
-  WINNING_LINES.each do |set|
-    # brd.values_at(*line).count(PLAYER_MARKER) == 2
-    if set.select { |space| brd[space] == COMPUTER_MARKER }.size == 2
-      piece = set.select { |space| brd[space] == INITIAL_MARKER }
-      return piece unless piece.empty?
-    end
-
-    if set.select { |space| brd[space] == PLAYER_MARKER }.size == 2
-      piece = set.select { |space| brd[space] == INITIAL_MARKER }
-      return piece unless piece.empty?
-    end
-  end
-  nil
 end
 
 def detect_winner(brd)
@@ -125,7 +119,7 @@ end
 def turn_order
   loop do
     system 'clear'
-    prompt "Welcome to Tic Tac Toe!"
+    prompt "Welcome to Tic Tac Toe! First to 5 wins!"
     prompt "Who would you like to go first?"
     prompt "1) Player"
     prompt "2) Computer"
