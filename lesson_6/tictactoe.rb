@@ -60,7 +60,7 @@ def player_places_piece!(brd)
     prompt "Choose a square (#{choices}):"
     square = gets.chomp.to_i
     break if empty_squares(brd).include?(square)
-
+    display_board(brd, 'Player')
     prompt "Sorry, that's not a valid choice."
   end
 
@@ -118,7 +118,6 @@ end
 
 def turn_order
   loop do
-    system 'clear'
     prompt "Welcome to Tic Tac Toe! First to 5 wins!"
     prompt "Who would you like to go first?"
     prompt "1) Player"
@@ -127,6 +126,7 @@ def turn_order
     first = gets.chomp
     first = %w(1 2).sample if first == '3'
     return first if ORDER_CHOICES.include?(first)
+    system 'clear'
     prompt "Sorry, that's not a valid choice"
   end
 end
