@@ -187,7 +187,7 @@ loop do
   if computer_sum == 21
     bj = true
     winner = 'Computer'
-  elsif player_sum == 21 && winner == ''
+  elsif player_sum == 21 && winner != 'Computer'
     bj = true
     winner = 'Player'
   end
