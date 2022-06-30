@@ -67,6 +67,9 @@ def player_places_piece!(brd)
   brd[square] = PLAYER_MARKER
 end
 
+# this function checks for both 'losing' and winning
+# moves and if unable to find one, picks a random
+# optimal move without thinking ahead
 def computer_places_piece!(brd)
   square = winning_move(brd, PLAYER_MARKER)
   square = winning_move(brd, COMPUTER_MARKER) if square == 0
@@ -85,6 +88,8 @@ def computer_places_piece!(brd)
   brd[square] = COMPUTER_MARKER
 end
 
+# this uses similar logic to detect winner and returns
+# a move that would either win or save from losing
 def winning_move(brd, marker)
   WINNING_LINES.each do |set|
     # brd.values_at(*line).count(PLAYER_MARKER) == 2
