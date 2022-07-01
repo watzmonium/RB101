@@ -106,18 +106,13 @@ end
 
 def player_turn(player_cards, computer_cards)
   display_cards(player_cards, computer_cards, true)
-  display_standings(player_cards, computer_cards, true)
   prompt(message('hitstay'))
   choice = user_input(%w(hit stay), true)
   choice
 end
 
 def computer_turn(player_cards, computer_cards)
-  system 'clear'
-  print_hand(computer_cards)
-  puts ''
-  print_hand(player_cards)
-  display_standings(player_cards, computer_cards)
+  display_cards(player_cards, computer_cards)
   sleep(1.2)
 end
 
@@ -126,6 +121,7 @@ def display_cards(player_cards, computer_cards, hidden=false)
   print_hand(computer_cards, hidden)
   puts ''
   print_hand(player_cards)
+  display_standings(player_cards, computer_cards, hidden)
 end
 
 def display_standings(player_cards, computer_cards, hidden=false)
@@ -246,7 +242,6 @@ loop do
 
   system 'clear'
   display_cards(player_cards, computer_cards)
-  display_standings(player_cards, computer_cards)
   winner = display_winner(player_sum, computer_sum) unless winner == 'Computer'
   game_over(winner, bj, bust)
   break unless user_input('yes').start_with?('y')
