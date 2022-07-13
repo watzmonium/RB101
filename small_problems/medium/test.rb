@@ -1,0 +1,2 @@
+
+p 'POOPO'.count('PO')
