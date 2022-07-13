@@ -10,6 +10,7 @@ def compute_switches(switches)
   end
 
   switch_hash.each_with_object([]) { |(k, v), obj| obj << k if v == true }
+  # switch_hash.select { |_, v| v == 'true' }.keys
 end
 
 p compute_switches(5) == [1, 4]

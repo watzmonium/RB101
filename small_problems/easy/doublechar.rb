@@ -10,13 +10,13 @@ def double_consonants(in_str)
   new_str
 end
 
-def double_consonants(string)
+def double_consonants2(string)
   string.chars.inject('') do |sum, char|
-    sum += char.match?(/[^aeiou\d\W]/i) ? char * 2 : char
+    sum += char.match?(/[^aeiou\d\W]/) ? char * 2 : char
   end
 end
 
-p double_consonants('String') == "SSttrrinngg"
+p double_consonants2('String') == "SSttrrinngg"
 p double_consonants("Hello-World!")  == "HHellllo-WWorrlldd!"
 p double_consonants("July 4th") == "JJullyy 4tthh"
 p double_consonants('') == ""
