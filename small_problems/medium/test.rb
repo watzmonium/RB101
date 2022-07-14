@@ -1,2 +1,1 @@
-
-p 'POOPO'.count('PO')
+p 'a' <=> 'b'
