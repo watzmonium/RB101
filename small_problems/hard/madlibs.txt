@@ -1,0 +1,7 @@
+One upon a time there was a %{adjective} %{noun}
+who liked to %{verb} on his way to school
+very %{adverb} every day. However, one day
+his %{noun} got out of control and %{verb}ed
+his %{noun}. In order to fix it, he used his
+%{noun}, which was nice and %{adjective} to
+%{adverb} fix it. The end!
