@@ -1,0 +1,7 @@
+Once upon a time, a %{adjective} %{noun}
+got flushed down a %{noun}. It was so 
+%{adjective}, so it made %{noun} come out of its 
+%{noun} %{adverb}. When it finally %{verb} out the
+other side, it had %{adjective} %{noun}
+all over its %{noun}, so it %{verb} it
+off very %{adverb}. The end.
