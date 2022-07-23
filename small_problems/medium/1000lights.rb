@@ -4,13 +4,12 @@ def compute_switches(switches)
     1.upto(switches) do |switch_num|
       if switch_num % iteration == 0
         switch_hash[switch_num] = false if switch_hash[switch_num] == nil
-        switch_hash[switch_num] = switch_hash[switch_num] == true ? false : true
+        switch_hash[switch_num] = !switch_hash[switch_num]
       end
     end
   end
 
-  switch_hash.each_with_object([]) { |(k, v), obj| obj << k if v == true }
-  # switch_hash.select { |_, v| v == 'true' }.keys
+  switch_hash.select { |_, v| v == 'true' }.keys
 end
 
 p compute_switches(5) == [1, 4]
