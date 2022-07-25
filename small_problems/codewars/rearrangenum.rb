@@ -15,7 +15,6 @@ def next_bigger_num2(number)
   (number + 1).upto(max_num) do |num|
     return num if num_sort(number, num)
   end
-
   -1
 end
 

@@ -1,1 +1,4 @@
-p 'a'.ord.to_s(2)
+a = %w(a b c)
+p a[1].object_id
+a[1] = '-'
+p a[1].object_id
